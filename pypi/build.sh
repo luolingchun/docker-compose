@@ -1,0 +1,1 @@
+docker build -t "localhost:5000/pypi-sync:1.0.0" .

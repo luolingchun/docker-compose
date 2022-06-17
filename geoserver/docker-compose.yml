@@ -1,0 +1,12 @@
+version: '3'
+services:
+  geoserver:
+    image: thinkwhere/geoserver:2.16.2
+    container_name: geoserver
+    volumes:
+      - ./data:/geoserver_data/data
+    ports:
+      - "8080:8080"
+
+    privileged: true
+    restart: always

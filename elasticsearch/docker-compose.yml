@@ -1,0 +1,25 @@
+version: "3"
+services:
+  elasticsearch:
+    image: elasticsearch:7.17.4
+    container_name: elasticsearch
+    restart: always
+    privileged: true
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+  #    volumes:
+  #      - ../data/elasticsearch/data:/usr/share/elasticsearch/data
+
+  kibana:
+    image: kibana:7.17.4
+    container_name: kibana
+
+    depends_on:
+    - elasticsearch
+
+    ports:
+      - "5601:5601"
+
+

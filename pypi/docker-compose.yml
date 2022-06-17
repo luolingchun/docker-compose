@@ -1,0 +1,25 @@
+version: "3"
+services:
+  pypi-sync:
+    image: pypi-sync:1.0.0
+    container_name: pypi-sync
+
+    privileged: true
+    restart: always
+
+    volumes:
+      - /data/pypi-sync:/mirrors/pypi
+      - ./crontab:/etc/crontabs/root
+      - ./log:/var/log
+
+  pypi-nginx:
+    image: nginx:1.18
+    container_name: pypi-nginx
+    ports:
+      - "2120:80"
+    volumes:
+      - /data/pypi-sync/web:/usr/share/nginx/html
+      - ./log:/var/log/nginx
+
+    restart: always
+    privileged: true

@@ -1,0 +1,2 @@
+0 5 * * 1 bandersnatch mirror >> /var/log/pypi.log
+# Don't remove this line .

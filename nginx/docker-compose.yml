@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:1.18
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./default.conf.template:/etc/nginx/nginx.conf
+
+    restart: always
+    privileged: true

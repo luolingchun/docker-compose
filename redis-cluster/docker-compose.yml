@@ -1,0 +1,85 @@
+version: '3'
+services:
+  redis1:
+    image: redis:6
+    container_name: redis-1
+    restart: always
+    environment:
+      # 设置时区为上海
+      - TZ=Asia/Shanghai
+    ports:
+      - "1379:1379"
+      - "11379:11379"
+    volumes:
+      - ./conf/redis1.conf:/conf/redis.conf
+    command: [ "redis-server", "/conf/redis.conf" ]
+  redis2:
+    image: redis:6
+    container_name: redis-2
+    restart: always
+    environment:
+      # 设置时区为上海
+      - TZ=Asia/Shanghai
+    ports:
+      - "2379:2379"
+      - "12379:12379"
+    volumes:
+      - ./conf/redis2.conf:/conf/redis.conf
+    command: [ "redis-server", "/conf/redis.conf" ]
+  redis3:
+    image: redis:6
+    container_name: redis-3
+    restart: always
+    environment:
+      # 设置时区为上海
+      - TZ=Asia/Shanghai
+    ports:
+      - "3379:3379"
+      - "13379:13379"
+    volumes:
+      - ./conf/redis3.conf:/conf/redis.conf
+    command: [ "redis-server", "/conf/redis.conf" ]
+  redis4:
+    image: redis:6
+    container_name: redis-4
+    restart: always
+    environment:
+      # 设置时区为上海
+      - TZ=Asia/Shanghai
+    ports:
+      - "4379:4379"
+      - "14379:14379"
+    volumes:
+      - ./conf/redis4.conf:/conf/redis.conf
+    command: [ "redis-server", "/conf/redis.conf" ]
+  redis5:
+    image: redis:6
+    container_name: redis-5
+    restart: always
+    environment:
+      # 设置时区为上海
+      - TZ=Asia/Shanghai
+    ports:
+      - "5379:5379"
+      - "15379:15379"
+    volumes:
+      - ./conf/redis5.conf:/conf/redis.conf
+    command: [ "redis-server", "/conf/redis.conf" ]
+  redis6:
+    image: redis:6
+    container_name: redis-6
+    restart: always
+    environment:
+      # 设置时区为上海
+      - TZ=Asia/Shanghai
+    ports:
+      - "6379:6379"
+      - "16379:16379"
+    volumes:
+      - ./conf/redis6.conf:/conf/redis.conf
+    command: [ "redis-server", "/conf/redis.conf" ]
+
+networks:
+  default:
+    external:
+      name: redis
