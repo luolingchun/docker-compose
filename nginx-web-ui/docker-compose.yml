@@ -1,0 +1,12 @@
+version: "3"
+services:
+  nginx-web-ui:
+    image: cym1102/nginxwebui:latest
+    container_name: nginx-web-ui
+
+    ports:
+      - "80:80"
+      - "8080:8080"
+
+    volumes:
+      - "./nginxWebUI:/home/nginxWebUI"
