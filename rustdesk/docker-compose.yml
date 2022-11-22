@@ -1,0 +1,37 @@
+version: '3'
+services:
+  hbbs:
+    image: rustdesk/rustdesk-server:1.1.6
+    container_name: rustdesk-hbbs
+    restart: always
+    ports:
+      - "21115:21115"
+      - "21116:21116"
+      - "21116:21116/udp"
+      # 网页
+      - "21118:21118"
+
+    depends_on:
+      - hbbr
+
+    command: hbbs -r xxx.com:21117 -k xxx
+
+    volumes:
+      - "./data:/root"
+
+  hbbr:
+    image: rustdesk/rustdesk-server:1.1.6
+    container_name: rustdesk-hbbr
+    restart: always
+    ports:
+      - "21117:21117"
+      # 网页
+      - "21119:21119"
+
+    command: hbbr -k xxx
+
+    volumes:
+      - "./data:/root"
+
+
+# 外网至少需要开放21116和21117两个端口，21118和21119是网页服务
