@@ -55,6 +55,7 @@ services:
       - ./data/seafile-onlyoffice/data:/var/www/onlyoffice/Data
       - ./data/seafile-onlyoffice/lib:/var/lib/onlyoffice
       - ./data/seafile-onlyoffice/postgresql:/var/lib/postgresql
+      - ./fonts:/usr/share/fonts/truetype/custom
       - ./default.json:/etc/onlyoffice/documentserver/default.json
 
 networks:
