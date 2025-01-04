@@ -1,0 +1,5 @@
+jupyterlab==4.3.1
+jupyterlab-language-pack-zh-CN==4.2.post3
+jupyterlab-lsp==5.1.0
+jedi-language-server==0.42.0
+ipympl==0.9.4

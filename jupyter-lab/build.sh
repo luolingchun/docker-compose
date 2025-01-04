@@ -1,0 +1,1 @@
+docker build -t jupyter-lab:4.3.1 .

@@ -1,0 +1,11 @@
+version: '3'
+services:
+  jupyterlab:
+    image: jupyterlab:4.3.1
+    container_name: jupyterlab
+    restart: always
+    ports:
+      - "8888:8888"
+
+    volumes:
+      - "./work:/work"
